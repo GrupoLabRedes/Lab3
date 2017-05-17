@@ -22,7 +22,7 @@ Wireshark}
 		capa del modelo OSI (capa de red), para esta variable se modificarán nuevamente las componentes “dst” y “src”, estas componentes corresponden a la IP de destino y a la de origen respectivamente.
 		Posteriormente se crea una nueva variable y a esta se le asigna el
 		comando “ICMP()” el cual trabaja en la cuarta capa del modelo OSI (capa de transporte). Continuando se crea otra variable y a esta se le asigna el comando “Raw()”, una vez hecho todo lo anterior se crea una nueva variable (nuestro paquete)  y se le asignan las variables anteriores separadas de un “/” en el mismo orden que fueron nombradas.
-	
+		
 	\section{Switch}
 		Existe una gran diferencia entre enviar paquetes en equipos conectados a un switch que enviarlos a equipos conectados a un HUB. A continuación se describirán los pasos llevados a cabo para enviar paquetes entre equipos conectados a un switch\\\\
 		{\bf \large Envío Broadcast:}\\\\
@@ -59,9 +59,8 @@ Wireshark}
 	
 	  1.-¿Qué pasa cuando envío un paquete a la dirección FF:FF:FF:FF:FF:FF? ¿Quienes
 	     lo reciben? ¿Por qué?\\
-    	 	\begin{figure}[H]
-	        	\centering
-	        	\includegraphics[width=10cm, height=11cm]{EnvioPaquetito.png}
+    	 	\begin{figure}[h]
+	        	\includegraphics[width=10cm, height=11cm]{PaqueteMacConocida.png}
 			\caption{Envío en Broadcast}
 	        	% \label{fig:my_label}
 	 	\end{figure}
@@ -72,7 +71,11 @@ Wireshark}
  
   	  2.-¿Qué pasa cuando envío un paquete a una MAC de otro equipo? ¿Quienes lo
   	      pueden recibir? ¿Por qué?\\
-    		
+    		\begin{figure}[h]
+  	          	\includegraphics[width=10cm, height=11cm]{PaqueteOtraRed.png}
+  	          	\caption{Envío a una MAC}
+  	          	%\label{fig:my_label}
+  		\end{figure}
  	      
  	      Cuando enviamos un paquete a la dirección MAC de otro equipo dentro de la red Ethernet, solamente el equipo que posee
  	      esa dirección es capaz de recibirlo. Esto ocurre puesto a que, como indicamos anteriormente, al paquete le dimos una
@@ -80,7 +83,11 @@ Wireshark}
         \newpage
   	  3.-¿Qué sucede si envía un paquete a una MAC que no corresponda a ningún equipo
   	      de la red? ¿Quienes lo pueden recibir? ¿Por qué?\\
-    		
+    		\begin{figure}[h]
+  	          	\includegraphics[width=10cm,height=11cm]{PaqueteMacMala.png}
+  	        	\caption{Envío a una MAC fuera de la red}
+  	            	%\label{fig:my_label}
+  	        \end{figure}
  	      Cuando enviamos 
  	      Cuando enviamos un paquete a una dirección MAC que no correspondía a ningún equipo de la red, al enviarlo nos apareció
  	      el mensaje: “WARNING: Mac address to reach destination not found. Using Broadcast.” Y posteriormente el paquete fue
